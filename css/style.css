@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400..800&family=Bebas+Neue&family=Roboto+Mono:ital,wght@0,700;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* Css da Home*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.headerHome {
+    background-color: #486985;
+    padding: 30px;
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+}
+
+footer {
+    background-color: #486985;
+    padding: 30px;
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid;
+    padding: 40px;
+    border-radius: 8px;
+    background-color: #486985;
+}
+
+.homeTitulo {
+    font-family: "Bebas Neue", serif;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.botaoHome {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+}
+
+.botaoHome>button {
+    background-color: #385166;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.botaoHome>button:hover {
+    background-color: #6e96b9;
+}
+
+/*CSS da pagina equipe*/
+
+.menu {
+    background-color: #486985;
+    padding: 30px;
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    letter-spacing: 3px;
+}
+
+.conteudoMenu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 80px;
+}
+
+.conteudoMenu>li {
+    position: relative;
+}
+
+.conteudoMenu li button,
+.conteudoMenu li a {
+    color: #dbdbdb;
+    background: none;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", serif;
+    font-weight: 700;
+    width: 200px;
+    letter-spacing: 2px;
+    font-size: 23px;
+}
+
+.conteudoMenu li button:hover,
+.conteudoMenu li a:hover {
+    color: #fff;
+    background-color: #537797;
+}
+
+.dropMenu {
+    display: none;
+    position: absolute;
+    background-color: #385166;
+    min-width: auto;
+    top: 100%;
+    left: 0;
+}
+
+.dropMenu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.dropMenu a:hover {
+    background-color: #486985;
+}
+
+.conteudoMenu>li:hover .dropMenu {
+    display: block;
+}
+
+#btnCadastro {
+    background-color: #56a9b4;
+    border: 1px solid #3d3d3d;
+}
+
+/* CSS da pagina do medico de cadastro*/
+
+h1 {
+    text-align: center;
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario {
+    display: flex;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 20px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.linha1 {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.linha2 {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.linha3 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#numero {
+    padding: 5px 5px;
+    width: 30px;
+}
+
+select {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e0dede;
+}
+
+.linha4 {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.sexo {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.linha5 {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+
+}
+
+.portador {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    gap: 5px;
+}
+
+.botaoCadastro {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.botaoCadastro>button {
+    color: #fff;
+    background: #537797;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+
+}
+
+.botaoCadastro :hover {
+    color: #3d3d3d;
+    background-color: #7fb3e0;
+
+}
+
+.linha6 {
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+}
+
+.linha7 {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+}
+
+.alerta {
+    display: none;
+    background-color: green;
+    color: white;
+    width: 500px;
+    height: 70px;
+    padding: 15px;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cadastro {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 40px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.linha8 {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid;
+    padding: 10px 0px 10px;
+    gap: 5px;
+}
+
+.texto {
+    color: #8a8d8f;
+}
+
+.linha9 {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid;
+    padding: 10px 0px 10px;
+    gap: 5px;
+}
+
+.linha10 {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid;
+    padding: 10px 0px 10px;
+    gap: 5px;
+}
+
+.linha11 {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid;
+    padding: 10px 0px 10px;
+    gap: 5px;
+}
+
+input[type=text],
+input[type=date],
+input[type=number] {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e0dede;
+    border: 1px solid #b1b1b1;
+    outline: none;
+}
+
+input[type=text]:focus,
+input[type=date]:focus,
+input[type=number]:focus{
+    background-color: lightblue;
+}
+
+#gravarMedico{
+    background-color: green;
+}
+
+#gravarMedico:hover{
+    background-color: rgb(14, 185, 14);
+}
+
+#excluirMedico{
+    background-color: rgb(221, 68, 68);
+}
+
+#excluirMedico:hover{
+    background-color: rgb(235, 45, 45);
+}
+
+#consultarMedico{
+    background-color: orange;
+}
+
+#consultarMedico:hover{
+    background-color: rgb(252, 182, 52);
+}
+
+.botaoRotinas{
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+}
+
+#alteraMedico{
+    background-color: #7fb3e0;
+}
+
+#alteraMedico:hover{
+    background-color: #96c2e9;
+}
+
+.botaoRotinas > button{
+    color: #fff;
+    background: #537797;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.botaoRotinas :hover{
+    color: #3d3d3d;
+    background-color: #7fb3e0;
+}
