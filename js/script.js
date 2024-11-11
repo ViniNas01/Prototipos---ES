@@ -31,15 +31,24 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "../../html/equipe.html";
     }
 
+    const botaoIncluir = document.getElementById("incluirMedico");
+    if (botaoIncluir){
+        botaoIncluir.addEventListener("click", incluirMedico);
+    }
+
+    function incluirMedico(){
+        window.location.href = "../../html/medico/medico.html";
+    }
+
     const botaoExcluir = document.getElementById("excluirMedico");
     if(botaoExcluir){
         botaoExcluir.addEventListener("click", excluirMedico);
     }
 
-    function voltarEquipe(){
-        window.location.href = "../../html/equipe.html";
-
+    function excluirMedico(){
+        window.location.href = "../../html/medico/medicoExcluido.html";
     }
+
 })
 
 // Pagina de Cadastro do médico
@@ -114,6 +123,14 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 
+function medicoExcluido(){
+    const alertaDiv = document.getElementById("exclusao");
+    alertaDiv.style.display = "block";
+
+    setTimeout(() => {
+        alertaDiv.style.display = "none";
+    }, 3000);
+}
 
 function alertaTexto(){
     const alertaDiv = document.getElementById("alerta");
