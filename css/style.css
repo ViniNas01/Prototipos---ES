@@ -309,6 +309,27 @@ select {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.alteracao{
+    display: none;
+    background-color: orange;
+    color: white;
+    width: 500px;
+    height: 70px;
+    padding: 15px;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .exclusao{
     display: none;
     background-color: rgb(240, 10, 10);
@@ -413,11 +434,11 @@ input[type=number]:focus{
 }
 
 #consultarMedico{
-    background-color: orange;
+    background-color: #7fb3e0;
 }
 
 #consultarMedico:hover{
-    background-color: rgb(252, 182, 52);
+    background-color: #96c2e9;
 }
 
 .botaoRotinas{
@@ -428,11 +449,11 @@ input[type=number]:focus{
 }
 
 #alteraMedico{
-    background-color: #7fb3e0;
+    background-color: orange;
 }
 
 #alteraMedico:hover{
-    background-color: #96c2e9;
+    background-color: rgb(252, 182, 52);
 }
 
 .botaoRotinas > button{
@@ -455,4 +476,14 @@ input[type=number]:focus{
 
 #incluirMedico{
     background-color: green;
+}
+#incluirMedico:hover{
+    background-color: rgb(34, 202, 34);
+}
+
+#savAlteracoes{
+    background-color: green;
+}
+#savAlteracoes:hover{
+    background-color: rgb(34, 202, 34);
 }
