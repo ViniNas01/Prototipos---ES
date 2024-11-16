@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital São Lucas & Mendel</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js" defer></script>
+</head>
+
+<body onload="pacienteAgendado()">
+    <header class="headerHome">
+        <a href="../../html/login.html"><span id="pricipal">Hospital São Lucas &amp; Mendel</span></a>
+    </header>
+
+    <main>
+        <div id="agendado" class="alerta">Paciente agendado com sucesso!</div>
+        <section class="cadastro">
+            <div>
+                <div class="linha8">
+                    <div>
+                        <label class="texto">Nome:</label>
+                        <label id="nomeCad"></label>
+
+                    </div>
+                    <div>
+                        <label class="texto">CPF:</label>
+                        <label id="cpfCad"></label>
+
+                    </div>
+                </div>          
+                <div class="linha9">
+                    <div>
+                        <label class="texto">Especialidade Médica:</label>
+                        <label id="especialidadeCad"></label>
+                    </div>
+                    <div>
+                        <label class="texto">Médico responsavel:</label>
+                        <label id="especialidadeCad"></label>
+                    </div>
+                    <div>
+                        <label class="texto">Data Marcada:</label>
+                        <label id="dataCad"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="botaoRotinas">
+                <button type="button" id="voltarPacienteCad">Voltar</button>
+                <button type="button" id="desmarcarPaciente">Desmarcar</button>
+                <button type="button" id="alterarPaciente">Alterar</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

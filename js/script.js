@@ -5,10 +5,195 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function equipe() {
-        window.location.href = "../html/equipe.html"; // Certifique-se que o caminho
+        window.location.href = "../html/equipe.html";
     }
 
+    const botaoAgendamento = document.querySelector("#botaoAgendamento");
+    if (botaoAgendamento){
+        botaoAgendamento.addEventListener("click", paciente);
+    }
+    function paciente(){
+        window.location.href = "../html/agendamento.html";
+    }
 });
+
+
+
+
+//Validar cpf  usuario
+const cpfs_Cadastrados = ["98765432100"];
+function TestaCPF(strCPF) {//Função para validar CPF
+    strCPF = strCPF.replace(/[.-]/g, ""); // Remove "." e "-"
+    if (strCPF.length !== 11 || strCPF === "00000000000") return false;
+
+    var Soma = 0;
+    var Resto;
+
+    // Primeiro dígito verificador
+    for (var i = 1; i <= 9; i++) {
+        Soma += parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+    }
+    Resto = (Soma * 10) % 11;
+    if (Resto === 10 || Resto === 11) Resto = 0;
+    if (Resto !== parseInt(strCPF.substring(9, 10))) return false;
+
+    // Segundo dígito verificador
+    Soma = 0;
+    for (var i = 1; i <= 10; i++) {
+        Soma += parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+    }
+    Resto = (Soma * 10) % 11;
+    if (Resto === 10 || Resto === 11) Resto = 0;
+    if (Resto !== parseInt(strCPF.substring(10, 11))) return false;
+
+    return true;
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const input = document.querySelector('#cpf');
+    const validarBtn = document.querySelector('#login');
+
+    // Adiciona máscara ao CPF enquanto o usuário digita
+    input.addEventListener('input', () => {
+        let valor = input.value.replace(/\D/g, ''); // Remove tudo que não é número
+        if (valor.length > 3) valor = valor.slice(0, 3) + '.' + valor.slice(3);
+        if (valor.length > 7) valor = valor.slice(0, 7) + '.' + valor.slice(7);
+        if (valor.length > 11) valor = valor.slice(0, 11) + '-' + valor.slice(11);
+        input.value = valor;
+    });
+
+    // Validação e redirecionamento
+    validarBtn.addEventListener('click', () => {
+        const cpf = input.value;
+        const cpfSemMascara = cpf.replace(/[.-]/g, ""); // Remove máscara para validação
+
+        if (!TestaCPF(cpf)) {
+            alert("CPF inválido! Por favor, insira um CPF válido.");
+            return;
+        }
+
+        if (cpfs_Cadastrados.includes(cpfSemMascara)) {
+            // Redireciona para a página de agendamento
+            window.location.href = "../html/index.html";
+        } else {
+            // Redireciona para a página de cadastro
+            alert("Usuário não cadastrado");
+        }
+    });
+});
+
+
+
+// Validação de CPF paciente
+const cpfsCadastrados = ["12345678909"];
+function TestaCPF(strCPF) {//Função para validar CPF
+    strCPF = strCPF.replace(/[.-]/g, ""); // Remove "." e "-"
+    if (strCPF.length !== 11 || strCPF === "00000000000") return false;
+
+    var Soma = 0;
+    var Resto;
+
+    // Primeiro dígito verificador
+    for (var i = 1; i <= 9; i++) {
+        Soma += parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+    }
+    Resto = (Soma * 10) % 11;
+    if (Resto === 10 || Resto === 11) Resto = 0;
+    if (Resto !== parseInt(strCPF.substring(9, 10))) return false;
+
+    // Segundo dígito verificador
+    Soma = 0;
+    for (var i = 1; i <= 10; i++) {
+        Soma += parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+    }
+    Resto = (Soma * 10) % 11;
+    if (Resto === 10 || Resto === 11) Resto = 0;
+    if (Resto !== parseInt(strCPF.substring(10, 11))) return false;
+
+    return true;
+}
+// Mascara do cpf
+document.addEventListener("DOMContentLoaded", function () {
+    const input = document.querySelector('#cpf');
+    const validarBtn = document.querySelector('#validar');
+
+    // Adiciona máscara ao CPF enquanto o usuário digita
+    input.addEventListener('input', () => {
+        let valor = input.value.replace(/\D/g, ''); // Remove tudo que não é número
+        if (valor.length > 3) valor = valor.slice(0, 3) + '.' + valor.slice(3);
+        if (valor.length > 7) valor = valor.slice(0, 7) + '.' + valor.slice(7);
+        if (valor.length > 11) valor = valor.slice(0, 11) + '-' + valor.slice(11);
+        input.value = valor;
+    });
+
+    // Validação e redirecionamento
+    validarBtn.addEventListener('click', () => {
+        const cpf = input.value;
+        const cpfSemMascara = cpf.replace(/[.-]/g, ""); // Remove máscara para validação
+
+        if (!TestaCPF(cpf)) {
+            alert("CPF inválido! Por favor, insira um CPF válido.");
+            return;
+        }
+
+        if (cpfsCadastrados.includes(cpfSemMascara)) {
+            // Redireciona para a página de agendamento
+            alert("CPF cadastrado! Redirecionando para a página de agendamento...");
+            window.location.href = "../html/paciente/pacienteCadastrado.html";
+        } else {
+            // Redireciona para a página de cadastro
+            window.location.href = "../html/paciente/pacienteCadBasico.html";
+        }
+    });
+});
+
+
+
+//Pagina Agendamento
+document.addEventListener("DOMContentLoaded", () => {
+    const voltarAgendamento = document.querySelector("#voltarAgendamento");
+    if (voltarAgendamento){
+        voltarAgendamento.addEventListener("click", voltarAgen);
+    }
+    function voltarAgen(){
+        window.location.href = "../../html/agendamento.html";
+    }
+
+    const agendar = document.querySelector("#gravarAgendamento");
+    if(agendar){
+        agendar.addEventListener("click", agendado);
+    }
+    function agendado(){
+        window.location.href = "../../html/paciente/pacienteAgendado.html";
+    }
+
+    const voltaPacienteCad = document.querySelector("#voltarPacienteCad");
+    if (voltaPacienteCad) {
+    voltaPacienteCad.addEventListener("click", voltarPaciente);
+    }
+    function voltarPaciente() {
+        window.location.href = "../../html/paciente/pacienteCadastrado.html";
+    }
+
+    const alterarPaciente = document.querySelector("#alterarPaciente");
+    if (alterarPaciente) {
+    alterarPaciente.addEventListener("click", pacienteAlt);
+    }
+    function pacienteAlt() {
+        window.location.href = "../../html/paciente/pacienteAlterado.html";
+    }
+
+    const desmarcarPaciente = document.querySelector("#desmarcarPaciente");
+    if (desmarcarPaciente) {
+        desmarcarPaciente.addEventListener("click", pacienteDesmarcado);
+    }
+    function pacienteDesmarcado(){
+        window.location.href = "../../html/paciente/pacienteDesmarcado.html";
+    }
+
+})
+
+
+
 
 // Funcões página medico
 document.addEventListener("DOMContentLoaded", function () {
@@ -27,6 +212,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     function voltarEquipe() {
         window.location.href = "../../html/equipe.html";
+    }
+
+    const botaoAvancar = document.getElementById("avancar");
+    if (botaoAvancar) {
+        botaoAvancar.addEventListener("click", avancarMedico);
+    }
+    function avancarMedico() {
+        window.location.href = "../../html/medico/especialidade.html";
     }
 
     const botaoIncluir = document.getElementById("incluirMedico");
@@ -70,190 +263,23 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "../../html/medico/alterarMedico.html";
     }
     exibirCamposEdicao();
-    
+
     function exibirCamposEdicao() {
-        // Nome
-        document.getElementById("nomeCad").style.display = "none";
-        document.getElementById("inputNome").style.display = "block";
-        document.getElementById("inputNome").value = localStorage.getItem("nome");
-
-        // CPF
-        document.getElementById("cpfCad").style.display = "none";
-        document.getElementById("inputCpf").style.display = "block";
-        document.getElementById("inputCpf").value = localStorage.getItem("cpf");
-
-        // N° Matrícula
-        document.getElementById("matriculaCad").style.display = "none";
-        document.getElementById("inputMatricula").style.display = "block";
-        document.getElementById("inputMatricula").value = localStorage.getItem("matricula");
-
-        // Especialidade Médica
-        document.getElementById("especialidadeCad").style.display = "none";
-        document.getElementById("inputEspecialidade").style.display = "block";
-        document.getElementById("inputEspecialidade").value = localStorage.getItem("especialidade");
-
-        // Equipe
-        document.getElementById("equipeCad").style.display = "none";
-        document.getElementById("inputEquipe").style.display = "block";
-        document.getElementById("inputEquipe").value = localStorage.getItem("equipe");
-
-        // Data de Admissão
-        document.getElementById("dataCad").style.display = "none";
-        document.getElementById("inputDataAdmissao").style.display = "block";
-        document.getElementById("inputDataAdmissao").value = localStorage.getItem("dataAdmissao");
-
-        // Endereço
-        document.getElementById("enderecoCad").style.display = "none";
-        document.getElementById("inputEndereco").style.display = "block";
-        document.getElementById("inputEndereco").value = localStorage.getItem("endereco");
-
-        // Número
-        document.getElementById("numeroCad").style.display = "none";
-        document.getElementById("inputNumero").style.display = "block";
-        document.getElementById("inputNumero").value = localStorage.getItem("numero");
-
-        // Cidade
-        document.getElementById("cidadeCad").style.display = "none";
-        document.getElementById("inputCidade").style.display = "block";
-        document.getElementById("inputCidade").value = localStorage.getItem("cidade");
-
-        // Estado
-        document.getElementById("estadoCad").style.display = "none";
-        document.getElementById("inputEstado").style.display = "block";
-        document.getElementById("inputEstado").value = localStorage.getItem("estado");
-
-        // Data de Nascimento
-        document.getElementById("dataNasCad").style.display = "none";
-        document.getElementById("inputDataNascimento").style.display = "block";
-        document.getElementById("inputDataNascimento").value = localStorage.getItem("dataNascimento");
-
-        // Sexo
-        document.getElementById("sexoCad").style.display = "none";
-        document.getElementById("inputSexo").style.display = "block";
-        document.getElementById("inputSexo").value = localStorage.getItem("sexo");
-
-        // Portador Necessidades Especiais
-        document.getElementById("portadorCad").style.display = "none";
-        document.getElementById("inputPortador").style.display = "block";
-        document.getElementById("inputPortador").value = localStorage.getItem("necessidades");
     }
-    
-    // const salvarAlteracoes = document.getElementById("savAlteracoes");
-    // if (salvarAlteracoes) {
-    //     salvarAlteracoes.addEventListener("click", salvAlt);
-    // }
 
-    // function salvAlt(){{
-    //     window.location.href = "../../html/medico/novoCadastro.html";
-    // }}
-    // saveAlt(); 
-    // function saveAlt(){
-    //     // Nome
-    //     const novoNome = document.getElementById("inputNome").value;
-    //     localStorage.setItem("nome", novoNome);
-    //     document.getElementById("nomeCad").textContent = novoNome;
-    //     document.getElementById("nomeCad").style.display = "block";
-    //     document.getElementById("inputNome").style.display = "none";
-    
-    //     // CPF
-    //     const novoCpf = document.getElementById("inputCpf").value;
-    //     localStorage.setItem("cpf", novoCpf);
-    //     document.getElementById("cpfCad").textContent = novoCpf;
-    //     document.getElementById("cpfCad").style.display = "block";
-    //     document.getElementById("inputCpf").style.display = "none";
-    
-    //     // N° Matrícula
-    //     const novaMatricula = document.getElementById("inputMatricula").value;
-    //     localStorage.setItem("matricula", novaMatricula);
-    //     document.getElementById("matriculaCad").textContent = novaMatricula;
-    //     document.getElementById("matriculaCad").style.display = "block";
-    //     document.getElementById("inputMatricula").style.display = "none";
-    
-    //     // Especialidade Médica
-    //     const novaEspecialidade = document.getElementById("inputEspecialidade").value;
-    //     localStorage.setItem("especialidade", novaEspecialidade);
-    //     document.getElementById("especialidadeCad").textContent = novaEspecialidade;
-    //     document.getElementById("especialidadeCad").style.display = "block";
-    //     document.getElementById("inputEspecialidade").style.display = "none";
-    
-    //     // Equipe
-    //     const novaEquipe = document.getElementById("inputEquipe").value;
-    //     localStorage.setItem("equipe", novaEquipe);
-    //     document.getElementById("equipeCad").textContent = novaEquipe;
-    //     document.getElementById("equipeCad").style.display = "block";
-    //     document.getElementById("inputEquipe").style.display = "none";
-    
-    //     // Data de Admissão
-    //     const novaDataAdmissao = document.getElementById("inputDataAdmissao").value;
-    //     localStorage.setItem("dataAdmissao", novaDataAdmissao);
-    //     document.getElementById("dataCad").textContent = novaDataAdmissao;
-    //     document.getElementById("dataCad").style.display = "block";
-    //     document.getElementById("inputDataAdmissao").style.display = "none";
-    
-    //     // Endereço
-    //     const novoEndereco = document.getElementById("inputEndereco").value;
-    //     localStorage.setItem("endereco", novoEndereco);
-    //     document.getElementById("enderecoCad").textContent = novoEndereco;
-    //     document.getElementById("enderecoCad").style.display = "block";
-    //     document.getElementById("inputEndereco").style.display = "none";
-    
-    //     // Número
-    //     const novoNumero = document.getElementById("inputNumero").value;
-    //     localStorage.setItem("numero", novoNumero);
-    //     document.getElementById("numeroCad").textContent = novoNumero;
-    //     document.getElementById("numeroCad").style.display = "block";
-    //     document.getElementById("inputNumero").style.display = "none";
-    
-    //     // Cidade
-    //     const novaCidade = document.getElementById("inputCidade").value;
-    //     localStorage.setItem("cidade", novaCidade);
-    //     document.getElementById("cidadeCad").textContent = novaCidade;
-    //     document.getElementById("cidadeCad").style.display = "block";
-    //     document.getElementById("inputCidade").style.display = "none";
-    
-    //     // Estado
-    //     const novoEstado = document.getElementById("inputEstado").value;
-    //     localStorage.setItem("estado", novoEstado);
-    //     document.getElementById("estadoCad").textContent = novoEstado;
-    //     document.getElementById("estadoCad").style.display = "block";
-    //     document.getElementById("inputEstado").style.display = "none";
-    
-    //     // Data de Nascimento
-    //     const novaDataNascimento = document.getElementById("inputDataNascimento").value;
-    //     localStorage.setItem("dataNascimento", novaDataNascimento);
-    //     document.getElementById("dataNasCad").textContent = novaDataNascimento;
-    //     document.getElementById("dataNasCad").style.display = "block";
-    //     document.getElementById("inputDataNascimento").style.display = "none";
-    
-    //     // Sexo
-    //     const novoSexo = document.getElementById("inputSexo").value;
-    //     localStorage.setItem("sexo", novoSexo);
-    //     document.getElementById("sexoCad").textContent = novoSexo;
-    //     document.getElementById("sexoCad").style.display = "block";
-    //     document.getElementById("inputSexo").style.display = "none";
-    
-    //     // Portador Necessidades Especiais
-    //     const novoPortador = document.getElementById("inputPortador").value;
-    //     localStorage.setItem("necessidades", novoPortador);
-    //     document.getElementById("portadorCad").textContent = novoPortador;
-    //     document.getElementById("portadorCad").style.display = "block";
-    //     document.getElementById("inputPortador").style.display = "none";
+    const salvarAlteracoes = document.getElementById("savAlteracoes");
+    if (salvarAlteracoes) {
+        salvarAlteracoes.addEventListener("click", salvAlt);
+    }
 
-    // }
-    
+    function salvAlt(){{
+        window.location.href = "../../html/medico/novoCadastro.html";
+    }}
+    saveAlt(); 
+    function saveAlt(){
+    }
+
 })
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Pagina de Cadastro do médico
 document.addEventListener("DOMContentLoaded", function () {
@@ -263,75 +289,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     function gravarMedico() {
-        let nome = document.getElementById("nome").value;
-        localStorage.setItem("nome", nome);
-        let dataNascimento = document.getElementById("dataNascimento").value;
-        localStorage.setItem("dataNascimento", dataNascimento);
-        //cpf
-        localStorage.setItem("cpf", document.getElementById("cpf").value);
-        //endereço
-        localStorage.setItem("endereco", document.getElementById("endereco").value);
-        // numero
-        localStorage.setItem("numero", document.getElementById("numero").value);
-        //cidade
-        localStorage.setItem("cidade", document.getElementById("cidade").value);
-        //Estado
-        localStorage.setItem("estado", document.getElementById("estado").value);
-        //sexo
-        const sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
-        if (sexoSelecionado) {
-            localStorage.setItem("sexo", sexoSelecionado.value);
-        }
-        //portador
-        const opcSelecionado = document.querySelector('input[name="necessidades"]:checked');
-        if (opcSelecionado) {
-            localStorage.setItem("necessidades", opcSelecionado.value);
-        }
-        //especialidade
-        localStorage.setItem("especialidade", document.getElementById("especialidade").value);
-        //data de admissão
-        localStorage.setItem("dataAdmissao", document.getElementById("dataAdmissao").value);
-        //equipe
-        localStorage.setItem("equipe", document.getElementById("equipe").value);
         window.location.href = "../../html/medico/medicoCadastrado.html";
     }
-    // numero matricula
-    let numeroMatricula = Math.floor(Math.random() * 100) + 1;
-    document.getElementById("matriculaCad").innerHTML = numeroMatricula;
-    //nome
-    var nome = localStorage.getItem("nome");
-    document.getElementById("nomeCad").textContent = nome;
-    //data de nascimento
-    let dataNascimento = localStorage.getItem("dataNascimento");
-    document.getElementById("dataNasCad").textContent = dataNascimento;
-    //cpf
-    document.getElementById("cpfCad").textContent = localStorage.getItem("cpf");
-    //endereço
-    document.getElementById("enderecoCad").textContent = localStorage.getItem("endereco");
-    //numero
-    document.getElementById("numeroCad").textContent = localStorage.getItem("numero");
-    //cidade
-    document.getElementById("cidadeCad").textContent = localStorage.getItem("cidade");
-    //estado
-    document.getElementById("estadoCad").textContent = localStorage.getItem("estado");
-    //sexo     
-    document.getElementById("sexoCad").textContent = localStorage.getItem("sexo");
-    //portador
-    document.getElementById("portadorCad").textContent = localStorage.getItem("necessidades");
-    //especialidade
-    document.getElementById("especialidadeCad").textContent = localStorage.getItem("especialidade");
-    //data de admissão
-    document.getElementById("dataCad").textContent = localStorage.getItem("dataAdmissao");
-    //equipe
-    document.getElementById("equipeCad").textContent = localStorage.getItem("equipe");
 })
 
-
-
-
-
-
-function medicoAlterado(){
+function medicoAlterado() {
     const alertaDiv = document.getElementById("alteracao");
     alertaDiv.style.display = "block";
 
@@ -351,6 +313,24 @@ function medicoExcluido() {
 
 function alertaTexto() {
     const alertaDiv = document.getElementById("alerta");
+    alertaDiv.style.display = "block";
+
+    setTimeout(() => {
+        alertaDiv.style.display = "none";
+    }, 3000);
+}
+
+function pacienteAgendado(){
+    const alertaDiv = document.getElementById("agendado");
+    alertaDiv.style.display = "block";
+
+    setTimeout(() => {
+        alertaDiv.style.display = "none";
+    }, 3000);
+}
+
+function pacienteAlterado(){
+    const alertaDiv = document.getElementById("alterado");
     alertaDiv.style.display = "block";
 
     setTimeout(() => {

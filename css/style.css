@@ -14,7 +14,6 @@ body {
     min-height: 100vh;
     margin: 0;
 }
-
 .headerHome {
     background-color: #486985;
     padding: 30px;
@@ -24,7 +23,6 @@ body {
     font-size: 50px;
     text-align: center;
 }
-
 footer {
     background-color: #486985;
     padding: 30px;
@@ -38,7 +36,6 @@ footer {
     width: 100%;
     z-index: 1000;
 }
-
 main {
     flex: 1;
     display: flex;
@@ -46,7 +43,6 @@ main {
     align-items: center;
     padding-bottom: 60px;
 }
-
 .home {
     display: flex;
     flex-direction: column;
@@ -56,21 +52,18 @@ main {
     border-radius: 8px;
     background-color: #486985;
 }
-
 .homeTitulo {
     font-family: "Bebas Neue", serif;
     font-size: 30px;
     color: #fff;
     margin-bottom: 30px;
 }
-
 .botaoHome {
     display: flex;
     flex-direction: column;
     gap: 50px;
     width: 100%;
 }
-
 .botaoHome>button {
     background-color: #385166;
     border: none;
@@ -83,86 +76,65 @@ main {
     font-weight: 700;
     font-size: 16px;
 }
-
 .botaoHome>button:hover {
     background-color: #6e96b9;
 }
+a{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: none;
+}
 
-/*CSS da pagina equipe*/
-
-.menu {
+/*Pagina home Agendamento */
+.login{
+    border: 1px solid;
+    padding: 40px;
+    border-radius: 8px;
     background-color: #486985;
-    padding: 30px;
+}
+
+.loginTitulo{
     font-family: "Bebas Neue", serif;
-    font-style: normal;
-    letter-spacing: 3px;
+    font-size: 30px;
+    color: #fff;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.conteudoMenu {
-    list-style: none;
-    padding: 0;
+.loginTexto{
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#botaoLogin {
     display: flex;
-    gap: 80px;
+    justify-content: flex-end;
 }
 
-.conteudoMenu>li {
-    position: relative;
-}
-
-.conteudoMenu li button,
-.conteudoMenu li a {
-    color: #dbdbdb;
-    background: none;
-    padding: 10px 30px;
+#botaoLogin button {
+    color: #fff;
+    background: #537797;
+    padding: 10px 15px;
     border: none;
     cursor: pointer;
     text-decoration: none;
     font-size: 18px;
     text-transform: uppercase;
-    font-family: "Bebas Neue", serif;
-    font-weight: 700;
-    width: 200px;
-    letter-spacing: 2px;
-    font-size: 23px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border-radius: 4px;
 }
-
-.conteudoMenu li button:hover,
-.conteudoMenu li a:hover {
-    color: #fff;
-    background-color: #537797;
-}
-
-.dropMenu {
-    display: none;
-    position: absolute;
-    background-color: #385166;
-    min-width: auto;
-    top: 100%;
-    left: 0;
-}
-
-.dropMenu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: white;
-}
-
-.dropMenu a:hover {
-    background-color: #486985;
-}
-
-.conteudoMenu>li:hover .dropMenu {
-    display: block;
-}
-
-#btnCadastro {
-    background-color: #56a9b4;
-    border: 1px solid #3d3d3d;
+#botaoLogin button:hover {
+    background: #679fcf;
 }
 
 /* CSS da pagina do medico de cadastro*/
-
 h1 {
     text-align: center;
     border-bottom: 1px solid;
@@ -402,7 +374,8 @@ select {
 
 input[type=text],
 input[type=date],
-input[type=number] {
+input[type=number],
+input[type=datetime-local] {
     padding: 5px 10px;
     border: none;
     border-radius: 4px;
@@ -413,7 +386,8 @@ input[type=number] {
 
 input[type=text]:focus,
 input[type=date]:focus,
-input[type=number]:focus{
+input[type=number]:focus,
+input[type=datetime-local]:focus{
     background-color: lightblue;
 }
 
@@ -485,5 +459,13 @@ input[type=number]:focus{
     background-color: green;
 }
 #savAlteracoes:hover{
+    background-color: rgb(34, 202, 34);
+}
+
+#gravarAgendamento{
+    background-color: green;
+}
+
+#gravarAgendamento:hover{
     background-color: rgb(34, 202, 34);
 }

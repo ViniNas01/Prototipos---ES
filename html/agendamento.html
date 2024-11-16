@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,26 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js" defer></script>
 </head>
+
 <body>
     <header class="headerHome">
         <a href="../../html/login.html"><span id="pricipal">Hospital São Lucas &amp; Mendel</span></a>
     </header>
 
     <main>
-        <section class="home">
-            <div class="homeTitulo">
-                <label>Cadastro de Equipe</label>
+        <section class="login">
+            <div class="loginTitulo">
+                <label>Hospital São Lucas &amp; Mendel</label>
             </div>
-            <div class="botaoHome">
-                <button type="button" id="medico">Médico</button>
-                <button type="button" >Enfermeiro Assistente</button>
+            <div class="loginTexto">
+                <label>Informe o cpf do Paciente:</label>
+                <input type="text" autocomplete="off" maxLength="14" id="cpf" required>
+            </div>
+            <div id="botaoLogin">
+                <button type="button" id="validar">Entrar</button>
             </div>
         </section>
     </main>
-
-    <footer>
-        <label>Hospital São Lucas &amp; Mendel</label>
-    </footer>
-
 </body>
+
 </html>

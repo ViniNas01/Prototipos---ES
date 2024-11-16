@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital São Lucas & Mendel</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="headerHome">
+        <a href="../../html/login.html"><span id="pricipal">Hospital São Lucas &amp; Mendel</span></a>
+    </header>
+    <main>
+        <section class="formulario">
+            <form>
+                <h2>Agendamento:</h2>
+                <div class="linha6">
+                    <label>Informe a Especialidade:</label>
+                    <select id="especialidade">
+                        <option disabled selected>Selecione uma especialidade</option>
+                        <option>Neurocirurgião infantil</option>
+                        <option>Cirurgião Dentista</option>
+                        <option>Radiologia</option>
+                        <option>Ortopedia</option>
+                        <option>Oftamologiaa</option>
+                        <option>Ultrassonografia</option>
+                        <option>Fonoaudiologia</option>
+                        <option>Endócrino Infantil</option>
+                        <option>Fisioterapia</option>
+                        <option>Fonoaudiologia</option>
+                    </select>
+                </div>
+                <div class="linha6">
+                    <label for="">Informe a data:</label>
+                    <input type="datetime-local">
+                </div>
+                <div class="linha5">
+                    <label for="">Preferencia Por médico:</label>
+                    <input type="radio">não
+                    <input type="radio">Sim
+                    <div class="portador">
+                        <label for="">Se sim, qual:</label>
+                        <select>
+                            <option value="" selected disabled>Selecione</option>
+                            <option>Dr. Carlos</option>
+                            <option>Dr. Roberto</option>
+                            <option>Dr. Fernando</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="linha5">
+                    <label for="">Tem Convenio:</label>
+                    <input type="radio">não
+                    <input type="radio">Sim
+                </div>
+                <div class="botaoCadastro">
+                    <button type="button" id="voltarAgendamento">Voltar</button>
+                    <button type="button" id="gravarAgendamento">Gravar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
