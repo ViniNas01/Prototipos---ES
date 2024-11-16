@@ -86,6 +86,17 @@ a{
     text-transform: none;
 }
 
+/*Prontuario Médico*/
+textarea{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e0dede;
+    border: 1px solid #b1b1b1;
+    outline: none;
+}
+
+
 /*Pagina home Agendamento */
 .login{
     border: 1px solid;
@@ -265,7 +276,7 @@ select {
     background-color: green;
     color: white;
     width: 500px;
-    height: 70px;
+    height: 80px;
     padding: 15px;
     border-radius: 5px;
     position: fixed;
@@ -467,5 +478,63 @@ input[type=datetime-local]:focus{
 }
 
 #gravarAgendamento:hover{
+    background-color: rgb(34, 202, 34);
+}
+
+#alterarProntuario{
+    background-color: orange;
+}
+#alterarProntuario:hover{
+    background-color: rgb(252, 182, 52);
+}
+#consultarProntuario{
+    background-color: #7fb3e0;
+}
+#consultarProntuario:hover{
+    background-color: #96c2e9;
+}
+#excluirProntuario{
+    background-color: rgb(221, 68, 68);
+}
+#excluirProntuario:hover{
+    background-color: rgb(235, 45, 45);
+}
+#incluirProntuario{
+    background-color: green;
+}
+#incluirProntuario:hover{
+    background-color: rgb(34, 202, 34);
+}
+
+#gravarEnfermeiro{
+    background-color: green;
+}
+#gravarEnfermeiro:hover{
+    background-color: rgb(34, 202, 34);
+}
+
+#alteraEnfermeiro{
+    background-color: orange;
+}
+#alteraEnfermeiro:hover{
+    background-color: rgb(252, 182, 52);
+}
+
+#consultarEnfermeiro{
+    background-color: #7fb3e0;
+}
+#consultarEnfermeiro:hover{
+    background-color: #96c2e9;
+}
+#excluirEnfermeiro{
+    background-color: rgb(221, 68, 68);
+}
+#excluirEnfermeiro:hover{
+    background-color: rgb(235, 45, 45);
+}
+#incluirEnfermeiro{
+    background-color: green;
+}
+#incluirEnfermeiro:hover{
     background-color: rgb(34, 202, 34);
 }

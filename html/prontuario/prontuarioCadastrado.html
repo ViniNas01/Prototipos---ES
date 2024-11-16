@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital São Lucas & Mendel</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js" defer></script>
+</head>
+<body onload="gravacao()">
+    <div id="alerta" class="alerta">Prontuário cadastrado com sucesso!</div>
+    <header class="headerHome">
+        <a href="../../html/login.html"><span id="pricipal">Hospital São Lucas &amp; Mendel</span></a>
+    </header>
+
+    <main>
+        <section class="cadastro">
+            <div>
+                <div class="linha8">
+                    <div>
+                        <label class="texto">Nome:</label>
+                        <label id="nomeCad"></label>
+                    </div>
+                    <div>
+                        <label class="texto">Idade:</label>
+                        <label id="idadeCad"></label>
+                    </div>
+                    <div>
+                        <label class="texto">cpf:</label>
+                        <label id="cpfCad"></label>
+                    </div>
+                </div>               
+                <div class="linha9">
+                    <div>
+                        <label class="texto">Peso Atual</label>
+                        <label id="pesoCad"></label>
+                    </div>
+                    <div>
+                        <label class="texto">Altura:</label>
+                        <label id="alturaCad"></label>
+                    </div>
+                    <div>
+                        <label class="texto">sexo:</label>
+                        <label id="sexoCad"></label>
+                    </div>
+                </div>               
+                <div class="linha10">
+                    <div>
+                        <label class="texto">Endereço:</label>
+                        <label id="enderecoCad"></label>
+                    </div>
+                </div>              
+                <div class="linha11">
+                    <div>
+                        <label class="texto">Observações:</label>
+                        <label id="obsCad"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="botaoRotinas">
+                <button type="button" id="voltarProntuario">Voltar</button>
+                <button type="button" id="alterarProntuario">Alterar</button>
+                <button type="button" id="consultarProntuario">Consultar</button>
+                <button type="button" id="excluirProntuario">Excluir</button>
+                <button type="button" id="incluirProntuario">Incluir</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

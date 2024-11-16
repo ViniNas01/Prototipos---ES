@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/script.js" defer></script>
 </head>
-<body>
+<body onload="alteracao()">
+    <div id="alteracao" class="alteracao">Enfermeiro Alterado!</div>
+    <div id="alerta" class="alerta">Médico cadastrado com sucesso!</div>
     <header class="headerHome">
         <a href="../../html/login.html"><span id="pricipal">Hospital São Lucas &amp; Mendel</span></a>
     </header>
+
     <section class="cadastro">
         <div>
             <div class="linha8">
@@ -89,13 +92,16 @@
                     <input type="text" id="inputPortador" style="display: none;">
                 </div>
             </div>
-            
-            <div class="botaoRotinas">
-                <button type="button" id="voltarCadastrado">Voltar</button>
-                <button type="button" id="savAlteracoes">Salvar Alterações</button>
-            </div>
+        </div>
+        <div class="botaoRotinas">
+            <button type="button" id="voltarEquipe">Voltar</button>
+            <button type="button" id="alteraEnfermeiro">Alterar</button>
+            <button type="button" id="consultarEnfermeiro">Consultar</button>
+            <button type="button" id="excluirEnfermeiro">Excluir</button>
+            <button type="button" id="incluirEnfermeiro">Incluir</button>
         </div>
     </section>
+    
     
 </body>
 </html>
