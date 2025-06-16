@@ -1,0 +1,1 @@
+Este é um projeto de faculdade feitro para criar ums sistema de completo de hospital, com rotinas de cadastro de pacientes, agendemento de consulta, cancelamento de consulta e todas as rotinas necessários para um sistema de hospital.
